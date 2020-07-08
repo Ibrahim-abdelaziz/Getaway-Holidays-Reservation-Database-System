@@ -21,5 +21,6 @@ urlpatterns = [
     path('login/', LoginView.as_view(), name='account_login'),
     path('logout/', LogoutView.as_view(), name='rest_logout'),
     path('accounts/', include('allauth.urls')),
+    path('delete-account/', views.DeleteAccount.as_view()),
 
 ]

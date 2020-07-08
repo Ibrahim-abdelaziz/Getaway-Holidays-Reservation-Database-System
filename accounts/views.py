@@ -14,9 +14,14 @@ from .serializers import ClientSerializer
 class ClientView(ModelViewSet):
     queryset = Client.objects.all().order_by('id')
     serializer_class = ClientSerializer
-    # permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated,)
 
-
+    def get_queryset(self):
+        qs = super().get_queryset()
+         
+        if self.request.user:
+            qs = qs.filter(user=self.request.user.id)
+        return qs
 
 class DeleteAccount(APIView):
     permission_classes = (permissions.IsAuthenticated,)

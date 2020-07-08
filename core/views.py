@@ -31,7 +31,7 @@ class ReservationView(ModelViewSet):
         query = super().get_queryset()
 
         if self.request.user:
-            query = Reservation.objects.filter(client=self.request.user.id)
+            query = query.filter(client=self.request.user.id)
 
         return query
 
