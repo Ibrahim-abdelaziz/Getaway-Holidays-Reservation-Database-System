@@ -33,7 +33,7 @@ django-phonenumber-field==4.0.0
 django-postgres-dropdb==2019.8.24
 django-rest-auth==0.9.5
 django-timezone-field==4.0
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 djangorestframework-jwt==1.11.0
 djangorestframework-simplejwt==4.4.0
 docker==4.2.0
